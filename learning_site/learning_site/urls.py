@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from . import views     # Import views from current directory
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.my_first_view),    # This will be the pattern for index
 ]
