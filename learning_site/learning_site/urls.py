@@ -17,6 +17,7 @@ Including another URLconf
 # Look at docs for these
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from . import views     # Import views from current directory
 
@@ -25,3 +26,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.my_first_view),    # This will be the pattern for index
 ]
+
+# This checks if we're in DEBUG mode,
+# Adds /static/ path that points to all our files in our static folder
+urlpatterns += staticfiles_urlpatterns()
