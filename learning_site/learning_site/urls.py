@@ -13,12 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+
+# Look at docs for these
+from django.conf.urls import url, include
 from django.contrib import admin
 
 from . import views     # Import views from current directory
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^courses/', include('courses.urls')),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.my_first_view),    # This will be the pattern for index
 ]
