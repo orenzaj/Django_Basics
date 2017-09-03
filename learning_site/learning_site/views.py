@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def my_first_view(request):
-    return HttpResponse("It me, Flipsie!")
+    return render(request, 'home.html')
