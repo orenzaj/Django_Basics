@@ -122,5 +122,5 @@ STATIC_URL = '/static/'
 
 # This setting is the location of static files
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'assets')
+    os.path.join(BASE_DIR, 'assets'),
 )
