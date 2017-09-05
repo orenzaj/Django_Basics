@@ -2,7 +2,8 @@
 from __future__ import unicode_literals
 
 from django.http import HttpResponse
-from django.shortcuts import render     # 3 args:
+from django.shortcuts import render, get_object_or_404
+# render takes 3 args:
 #   request (same parameter as view)
 #   template_path
 #   context (dictionary)
@@ -18,5 +19,6 @@ def course_list(request):
 
 
 def course_detail(request, pk):
-    course = Course.objects.get(pk=pk)
+    #course = Course.objects.get(pk=pk)
+    course = get_object_or_404(Course, pk=pk)
     return render(request, 'courses/course_detail.html', {'course': course})
