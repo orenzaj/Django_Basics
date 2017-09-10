@@ -22,9 +22,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from . import views     # Import views from current directory
 
 urlpatterns = [
-    url(r'^courses/', include('courses.urls')),
+    url(r'^courses/', include('courses.urls', namespace='courses')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.my_first_view),    # This will be the pattern for index
+    url(r'^$', views.my_first_view, name='Home'),    # This will be the pattern for index
 ]
 
 # This checks if we're in DEBUG mode,
