@@ -19,7 +19,7 @@ class Step(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     order = models.IntegerField(default=0)
-    course = models.ForeignKey(Course)
+    course = models.ForeignKey('Course')
     content = models.TextField(blank=True, default='')
 
     class Meta:
